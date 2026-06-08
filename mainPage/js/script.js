@@ -1,19 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- SLIDER AYARLARI ---
+    // Slider yapılandırması ve DOM referansları
     const track = document.getElementById('sliderTrack');
     const slides = Array.from(track.children);
     const nextBtn = document.getElementById('nextBtn');
     const prevBtn = document.getElementById('prevBtn');
     
-    // Gösterge Parçaları (Tır, Dorse 1, Dorse 2)
+    // İlerleme göstergesi öğeleri (Tır ve Dorse ikonları)
     const vehicleParts = document.querySelectorAll('.vehicle-part');
 
     const slideDuration = 500;
     const autoPlayDelay = 3000;
     let autoPlayInterval; 
 
-    // Sonsuz döngü için klonlama
+    // Kusursuz döngü (infinite loop) için ilk ve son slaytların klonlanması
     const firstClone = slides[0].cloneNode(true);
     const lastClone = slides[slides.length - 1].cloneNode(true);
     firstClone.id = 'first-clone';
@@ -23,32 +23,32 @@ document.addEventListener('DOMContentLoaded', () => {
     track.insertBefore(lastClone, slides[0]);
 
     const allSlides = document.querySelectorAll('.slide');
-    let index = 1; // Başlangıç slaydı
+    let index = 1; // Aktif slayt indeksi
     track.style.transform = `translateX(${-100 * index}%)`;
 
-    // --- GÖSTERGE GÜNCELLEME ---
+    // İlerleme göstergesinin senkronizasyonu
     const updateProgress = (currentIndex) => {
-        // İndeks hesabı (Klonları yoksayarak 1, 2, 3'e çevir)
+        // Klonlanmış slaytları filtreleyerek gerçek slayt indeksini hesapla
         let step = currentIndex;
         if (currentIndex === allSlides.length - 1) step = 1; 
         if (currentIndex === 0) step = allSlides.length - 2; 
 
-        // Tüm ışıkları söndür
+        // Gösterge öğelerinin aktif durumlarını sıfırla
         vehicleParts.forEach(part => part.classList.remove('active'));
 
-        // O anki parçayı yak (0: Tır, 1: 1.Dorse, 2: 2.Dorse)
+        // Geçerli slayta karşılık gelen gösterge öğesini aktifleştir
         if (vehicleParts[step - 1]) {
             vehicleParts[step - 1].classList.add('active');
         }
     };
 
-    // Kaydırma İşlemi
+    // Slayt geçiş animasyonunu uygula
     const moveToSlide = () => {
         track.style.transition = `transform ${slideDuration}ms ease-in-out`;
         track.style.transform = `translateX(${-100 * index}%)`;
     };
 
-    // Geçiş Bittiğinde (Loop Kontrolü)
+    // Animasyon bitiminde sonsuz döngü sınır kontrolleri
     track.addEventListener('transitionend', () => {
         if (allSlides[index].id === 'first-clone') {
             track.style.transition = 'none';
@@ -75,19 +75,19 @@ document.addEventListener('DOMContentLoaded', () => {
         moveToSlide();
     };
 
-    // Butonlar
+    // Manuel kontrol butonları olay dinleyicileri
     nextBtn.addEventListener('click', () => { slideNext(); resetTimer(); });
     prevBtn.addEventListener('click', () => { slidePrev(); resetTimer(); });
 
-    // Otomatik Oynatma
+    // Otomatik geçiş zamanlayıcısı yönetimi
     const startTimer = () => { autoPlayInterval = setInterval(slideNext, autoPlayDelay); };
     const resetTimer = () => { clearInterval(autoPlayInterval); startTimer(); };
 
-    // Başlat
+    // Başlangıç durumunu ayarla ve zamanlayıcıyı başlat
     updateProgress(index);
     startTimer();
 
-    // --- SAYFA GEÇİŞ PARAMETRELERİ ---
+    // URL parametrelerine göre sayfa içi yönlendirme mantığı
     const urlParams = new URLSearchParams(window.location.search);
     const secim = urlParams.get('secim');
     if (secim) {

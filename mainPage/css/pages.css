@@ -1,11 +1,11 @@
-/* --- İÇERİK SAYFALARI İÇİN MODERN STİLLER (Hakkımızda, SSS, İletişim) --- */
+/* İçerik Sayfaları Temel Stilleri (Hakkımızda, SSS, İletişim) */
 
-/* Sayfa Genel Yapısı */
+/* Sayfa Konteyneri ve Genel Düzeni */
 .page-container {
-    padding-top: 130px; /* Header boşluğu */
+    padding-top: 130px; /* Üst bilgi bileşeni için offset alanı */
     padding-bottom: 80px;
     min-height: 100vh;
-    background: linear-gradient(to bottom, #f4f7f6, #fff); /* Hafif degrade arka plan */
+    background: linear-gradient(to bottom, #f4f7f6, #fff); /* Doğrusal degrade (gradient) arka plan efekti */
 }
 
 .page-content {
@@ -14,7 +14,7 @@
     padding: 0 20px;
 }
 
-/* Sayfa Başlıkları */
+/* Tipografi: Sayfa Başlığı Stilleri */
 .page-title {
     font-size: 42px;
     color: var(--brand-blue);
@@ -25,7 +25,7 @@
     letter-spacing: -1px;
 }
 
-/* Başlık Altındaki Turuncu Çizgi */
+/* Başlık Vurgu Çizgisi Efekti */
 .page-title::after {
     content: '';
     display: block;
@@ -36,7 +36,7 @@
     border-radius: 5px;
 }
 
-/* --- HAKKIMIZDA SAYFASI --- */
+/* Hakkımızda Sayfası Stilleri */
 .about-text {
     font-size: 17px;
     line-height: 1.9;
@@ -46,8 +46,8 @@
     background: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Çok hafif gölge */
-    border-left: 5px solid var(--brand-blue); /* Sol tarafa mavi çizgi */
+    box-shadow: 0 5px 20px rgba(0,0,0,0.03); /* Yumuşatılmış kutu gölgesi (box-shadow) efekti */
+    border-left: 5px solid var(--brand-blue); /* Sol kenar vurgu çizgisi */
 }
 
 .mission-vision {
@@ -69,14 +69,14 @@
     border-top: 5px solid transparent;
 }
 
-/* Vizyon/Misyon Kutularına Hover Efekti */
+/* Vizyon/Misyon Bileşeni Etkileşim Durumları */
 .mv-box:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
-.mv-box:nth-child(1) { border-top-color: var(--brand-orange); } /* Vizyon Turuncu */
-.mv-box:nth-child(2) { border-top-color: var(--brand-blue); }   /* Misyon Mavi */
+.mv-box:nth-child(1) { border-top-color: var(--brand-orange); } /* Vizyon bileşeni üst kenar vurgusu */
+.mv-box:nth-child(2) { border-top-color: var(--brand-blue); }   /* Misyon bileşeni üst kenar vurgusu */
 
 .mv-box h3 {
     font-size: 24px;
@@ -84,7 +84,7 @@
     color: var(--text-dark);
 }
 
-/* --- SSS (FAQ) SAYFASI --- */
+/* Sıkça Sorulan Sorular (SSS) Akordeon Stilleri */
 .faq-item {
     background: #fff;
     margin-bottom: 20px;
@@ -97,7 +97,7 @@
 
 .faq-item:hover {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    transform: translateX(5px); /* Hoverda hafif sağa kayma */
+    transform: translateX(5px); /* Hover durumunda yatay eksen animasyonu */
 }
 
 .faq-question {
@@ -125,12 +125,12 @@
     transition: all 0.5s ease;
     color: #666;
     line-height: 1.7;
-    background: #fafafa; /* Cevap kısmı hafif gri olsun */
+    background: #fafafa; /* Açıklama alanı arka plan rengi ayrımı */
 }
 
-/* Aktif Soru Tasarımı */
+/* Genişletilmiş Durum (Aktif) Akordeon Stilleri */
 .faq-item.active {
-    border-color: var(--brand-orange); /* Aktifken çerçeve turuncu */
+    border-color: var(--brand-orange); /* Genişletilmiş durumda kenarlık vurgusu */
 }
 
 .faq-item.active .faq-question {
@@ -139,7 +139,7 @@
 }
 
 .faq-item.active .faq-question i {
-    transform: rotate(180deg); /* Ok dönsün */
+    transform: rotate(180deg); /* İkon dönüşüm (rotate) animasyonu */
 }
 
 .faq-item.active .faq-answer {
@@ -148,17 +148,17 @@
     padding-bottom: 25px;
 }
 
-/* --- İLETİŞİM SAYFASI --- */
+/* İletişim Sayfası Bileşen Stilleri */
 .contact-wrapper {
     display: flex;
-    gap: 0; /* Boşluğu kaldırdık, yapışık dursunlar */
+    gap: 0; /* Izgara öğeleri arası boşluğun sıfırlanması */
     flex-wrap: wrap;
     border-radius: 20px;
-    overflow: hidden; /* Köşeleri yuvarlatmak için */
+    overflow: hidden; /* Taşma kontrolü ve köşe yuvarlatma */
     box-shadow: 0 20px 60px rgba(0,0,0,0.1);
 }
 
-/* Sol Taraf: İletişim Bilgileri (Koyu Mavi Alan) */
+/* İletişim Bilgileri Paneli Stilleri */
 .contact-info {
     flex: 1;
     background: var(--brand-blue);
@@ -200,7 +200,7 @@
     opacity: 0.9;
 }
 
-/* Sağ Taraf: Form (Beyaz Alan) */
+/* İletişim Formu Paneli Stilleri */
 .contact-form {
     flex: 1.5;
     background: #fff;
@@ -232,14 +232,14 @@
 
 .form-group textarea { height: 150px; resize: none; }
 
-/* Inputa tıklayınca efekt */
+/* Form Elemanları Odak (Focus) Durumu Efektleri */
 .form-group input:focus, .form-group textarea:focus {
     border-color: var(--brand-orange);
     background: #fff;
     box-shadow: 0 0 10px rgba(242, 122, 26, 0.1);
 }
 
-/* Buton Düzenlemesi */
+/* Gönderim Butonu Stilleri */
 .btn-submit.orange-btn {
     background: var(--brand-orange);
     font-size: 16px;
@@ -248,10 +248,10 @@
     margin-top: 10px;
     box-shadow: 0 10px 20px rgba(242, 122, 26, 0.3);
     
-    /* ÇERÇEVEYİ KALDIRAN KOD BURADA */
+    /* Varsayılan tarayıcı kenarlık stillerinin sıfırlanması */
     border: none; 
-    outline: none; /* Tıklanınca çıkan dış çizgiyi de kaldırır */
-    color: #fff; /* Yazı renginin beyaz olduğundan emin olalım */
+    outline: none; /* Odak anındaki dış kenarlık çizgisini (outline) temizle */
+    color: #fff; /* Metin rengini sabitle */
 }
 
 .btn-submit.orange-btn:hover {
@@ -260,7 +260,7 @@
     box-shadow: 0 15px 25px rgba(242, 122, 26, 0.4);
 }
 
-/* Mobil */
+/* Mobil Cihazlar İçin Medya Sorguları */
 @media (max-width: 900px) {
     .page-title { font-size: 32px; }
     .contact-wrapper { flex-direction: column; }
