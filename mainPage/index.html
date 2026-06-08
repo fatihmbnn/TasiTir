@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaşıTır - Lojistik Çözüm Ortağınız</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="TaşıTır Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="faq.html">SSS</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-auth btn-login"><i class="fas fa-sign-in-alt"></i> Giriş Yap</a>
+                <a href="register.html" class="btn-auth btn-register"><i class="fas fa-user-plus"></i> Kaydol</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="slider-container">
+        <button class="slider-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="slider-track" id="sliderTrack">
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>Güvenli Taşımacılık</h2>
+                    <p>Yükünüzü Türkiye'nin her yerine güvenle ulaştırıyoruz.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>Hızlı Çözümler</h2>
+                    <p>Binlerce tır şoförü tek tıkla elinizin altında.</p>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1519003722824-194d4455a60c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');">
+                <div class="slide-content">
+                    <h2>Teknoloji ile Takip</h2>
+                    <p>Yükünüzün nerede olduğunu anlık olarak izleyin.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="slider-vehicle-overlay">
+            
+            <i class="fas fa-truck-moving vehicle-part"></i> <i class="fas fa-trailer vehicle-part"></i>
+            <i class="fas fa-trailer vehicle-part"></i>
+        </div>
+    </section>
+
+    <section class="action-section">
+        <a href="login.html?secim=yuk-sahibi" class="card card-cargo">
+            <i class="fas fa-boxes"></i>
+            <h3>YÜKÜM VAR</h3>
+            <p>Hemen araç bulun, yükünüzü taşıyın.</p>
+        </a>
+        <a href="login.html?secim=sofor" class="card card-driver">
+            <i class="fas fa-truck-moving"></i>
+            <h3>TIR ŞOFÖRÜYÜM</h3>
+            <p>Uygun yükleri bulun, kazanmaya başlayın.</p>
+        </a>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 TaşıTır Lojistik. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

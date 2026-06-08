@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sıkça Sorulan Sorular - TaşıTır</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo-area">
+                <img src="images/logo.png" alt="TaşıTır Logo">
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Anasayfa</a></li>
+                    <li><a href="about.html">Hakkımızda</a></li>
+                    <li><a href="faq.html">SSS</a></li>
+                    <li><a href="contact.html">İletişim</a></li>
+                </ul>
+            </nav>
+            <div class="auth-buttons">
+                <a href="login.html" class="btn-auth btn-login">Giriş Yap</a>
+                <a href="register.html" class="btn-auth btn-register">Kaydol</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="page-container">
+        <div class="page-content">
+            <h1 class="page-title">Sıkça Sorulan Sorular</h1>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Nasıl yük ilanı verebilirim?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Anasayfadaki "Yüküm Var" butonuna tıklayıp üye olduktan sonra, panelinizden "Yeni İlan Oluştur" seçeneği ile yükünüzün detaylarını girerek saniyeler içinde ilan verebilirsiniz.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Tır şoförü olarak sisteme nasıl kayıt olurum?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>"Tır Şoförüyüm" seçeneği ile kayıt formunu doldurmanız yeterlidir. Güvenlik ekibimiz ehliyet ve araç belgelerinizi doğruladıktan sonra hesabınız aktif edilecektir.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Ödeme işlemleri nasıl gerçekleşiyor?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>TaşıTır güvencesiyle kredi kartı veya havale ile ödeme yapabilirsiniz. Ödemeniz, yük teslim edilene kadar havuz hesabımızda güvenle saklanır.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    Sigorta hizmetiniz var mı?
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <div class="faq-answer">
+                    <p>Evet, platformumuz üzerinden taşınan tüm yükler, anlaşmalı olduğumuz sigorta şirketleri tarafından taşıma süresi boyunca sigortalanmaktadır.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 TaşıTır Lojistik. Tüm hakları saklıdır.</p>
+    </footer>
+
+    <script>
+        const questions = document.querySelectorAll('.faq-question');
+
+        questions.forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentElement;
+                // Diğer açık olanları kapat (Opsiyonel)
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    if(i !== item) i.classList.remove('active');
+                });
+                // Tıklananı aç/kapat
+                item.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+</html>
